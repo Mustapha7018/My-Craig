@@ -3,49 +3,25 @@
 {% block content %}
    <h2 style="text-align: center;">{{ search | title}}</h2>
 
-   <div class="row">
+
+<div class="row">
+   {% for post in final_postings %} 
+        
     <div class="col s4">
         <div class="card">
             <div class="card-image">
-                <a href="/"><img src="https://assets.adidas.com/images/w_600,f_auto,q_auto/ce8a6f3aa6294de988d7abce00c4e459_9366/Breaknet_Shoes_White_FX8707_01_standard.jpg" alt=""></a>
+                <a href="{{ post.1 }}"><img src="{{ post.3 }}" alt=""></a>
             </div>
             <div class="card-content">
-                <p>TEST</p>
+                <p>{{ post.0 }}</p>
             </div>
             <div class="card-action">
-                <a href="/">View listing: Price Test Price</a>
+                <a href="{{ post.1 }}">View listing: Price {{ post.2 }}</a>
             </div>
         </div>
-       </div>
+    </div>
+    {% endfor %}
+</div>
     
-       <div class="col s4">
-        <div class="card">
-            <div class="card-image">
-                <a href="/"><img src="https://ae01.alicdn.com/kf/H77cdd4f1b4d44afcb3b07b975066f3bdy/2022-Minimalist-Men-s-Fashion-Ultra-Thin-Watches-Simple-Men-Business-Stainless-Steel-Mesh-Belt-Quartz.jpg" alt=""></a>
-            </div>
-            <div class="card-content">
-                <p>TEST</p>
-            </div>
-            <div class="card-action">
-                <a href="/">View listing: Price Test Price</a>
-            </div>
-        </div>
-       </div>
-
-       <div class="col s4">
-        <div class="card">
-            <div class="card-image">
-                <a href="/"><img src="https://img.joomcdn.net/b3c11f44387389655f0459a8282b1cdc730adef3_original.jpeg" alt=""></a>
-            </div>
-            <div class="card-content">
-                <p>TEST</p>
-            </div>
-            <div class="card-action">
-                <a href="/">View listing: Price Test Price</a>
-            </div>
-        </div>
-       </div>
-
-   </div>
    
 {% endblock content %}
